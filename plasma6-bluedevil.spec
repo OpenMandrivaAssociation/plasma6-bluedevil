@@ -1,5 +1,5 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20230606
+%define git 20230609
 
 Summary:	The bluetooth stack for KDE 6
 Name:		plasma6-bluedevil
@@ -53,7 +53,6 @@ KCM, KDED, KIO, Library and some other small applications.
 %{_datadir}/mime/packages/bluedevil-mime.xml
 %{_datadir}/metainfo/org.kde.plasma.bluetooth.appdata.xml
 
-%{_datadir}/kpackage/kcms/kcm_bluetooth
 %{_qtdir}/plugins/plasma/kcms/systemsettings/kcm_bluetooth.so
 %{_datadir}/qlogging-categories6/bluedevil.categories
 
