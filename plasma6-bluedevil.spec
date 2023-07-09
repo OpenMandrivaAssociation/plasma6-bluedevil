@@ -35,6 +35,7 @@ BuildRequires:	cmake(KF6KCMUtils)
 BuildRequires:	cmake(KF6KDED)
 BuildRequires:	cmake(KF6Kirigami2)
 BuildRequires:	cmake(KF6Declarative)
+BuildRequires:	cmake(KF6Svg)
 BuildRequires:	pkgconfig(shared-mime-info)
 # Avoid pulling in Plasma 5
 BuildRequires:	plasma6-xdg-desktop-portal-kde
