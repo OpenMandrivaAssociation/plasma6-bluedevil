@@ -1,5 +1,5 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20230924
+%define git 20230927
 
 Summary:	The bluetooth stack for KDE 6
 Name:		plasma6-bluedevil
@@ -63,6 +63,8 @@ KCM, KDED, KIO, Library and some other small applications.
 %{_qtdir}/plugins/kf6/kded/*.so
 %{_qtdir}/qml/org/kde/plasma/private/bluetooth/libbluetoothplugin.so
 %{_qtdir}/qml/org/kde/plasma/private/bluetooth/qmldir
+%{_qtdir}/qml/org/kde/plasma/private/bluetooth/bluetoothplugin.qmltypes
+%{_qtdir}/qml/org/kde/plasma/private/bluetooth/kde-qmlmodule.version
 
 %dir %{_datadir}/plasma/plasmoids/org.kde.plasma.bluetooth
 %dir %{_datadir}/plasma/plasmoids/org.kde.plasma.bluetooth/contents
