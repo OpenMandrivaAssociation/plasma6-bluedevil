@@ -30,6 +30,7 @@ BuildRequires:	cmake(KF6I18n)
 BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(KF6BluezQt)
 BuildRequires:	cmake(Plasma) >= 5.90.0
+BuildRequires:	cmake(PlasmaQuick)
 BuildRequires:	cmake(KF6DocTools)
 BuildRequires:	cmake(KF6KCMUtils)
 BuildRequires:	cmake(KF6KDED)
