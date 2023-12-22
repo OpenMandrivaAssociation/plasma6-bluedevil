@@ -3,7 +3,7 @@
 
 Summary:	The bluetooth stack for KDE 6
 Name:		plasma6-bluedevil
-Version:	5.90.0
+Version:	5.91.0
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPL
