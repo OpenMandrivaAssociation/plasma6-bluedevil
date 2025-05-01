@@ -4,9 +4,9 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Summary:	The bluetooth stack for KDE 6
-Name:		plasma6-bluedevil
+Name:		bluedevil
 Version:	6.3.4
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}3
 Group:		Graphical desktop/KDE
 License:	GPL
 Url:		https://projects.kde.org/projects/extragear/base/bluedevil
@@ -43,6 +43,11 @@ BuildRequires:	pkgconfig(shared-mime-info)
 Provides:	bluez-pin
 Requires:	bluez >= 4.28
 Requires:	obexd
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+# Renamed after 6.0 2025-05-01
+%rename plasma6-bluedevil
 
 %description
 BlueDevil is the new bluetooth stack for KDE, it's composed of:
@@ -74,20 +79,3 @@ KCM, KDED, KIO, Library and some other small applications.
 %{_datadir}/plasma/plasmoids/org.kde.plasma.bluetooth/metadata.json
 %{_datadir}/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/*.qml
 %{_datadir}/remoteview/bluetooth-network.desktop
-
-#-----------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n bluedevil-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang %{name} --all-name --with-html
